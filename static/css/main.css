@@ -137,7 +137,9 @@ a, a:visited, a:link {
 }
 
 .inrange .bgButton {
-  color: #4cff00;
+  XXcolor: #4cff00;
+  color: purple;
+
 }
 
 .bgStatus .currentBG {
