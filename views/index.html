@@ -683,6 +683,15 @@
         <script src="js/bundle.js?v=<%= locals.cachebuster %>"></script>
         <script src="socket.io/socket.io.js?v=<%= locals.cachebuster %>"></script>
         <script src="js/client.js?v=<%= locals.cachebuster %>"></script>
-        <script src="customize.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+
+setTimeout(function(){
+    console.log("test");
+    $('.pill.pump.current').css('background-color':'green');
+  }, 500);
+  
+});
+        </script>
     </body>
 </html>
