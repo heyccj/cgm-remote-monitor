@@ -721,15 +721,15 @@
           $('#units').prepend('<i class="fas fa-syringe"></i>');
           $('#batt').prepend('<i class="fas fa-bolt"></i>');
           $('#time').prepend('<i class="fas fa-sync-alt"></i>');
-          $('#status').prepend('i class="far fa-question-circle"></i>');
+          $('#status').prepend('<i class="far fa-question-circle"></i>');
           var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
           $(".pill.pump.current #status").html(content);
           $('#status label').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
           });
           $('.transmitter-info').find('*').not('img').remove();
-          var cali = $('#cali');
-          $('.transmitter-info').append("<div><span>Time until next calibration</span> " + cali + "</div>").append($('#status label'));
+          $('.transmitter-info').append("<div><span>Time until next calibration</span></div>").append($('#status label'));
+          $('.transmitter-info div').append($("#cali"));
         }
 
 </script>
@@ -815,6 +815,20 @@ display: block;
 margin: 0 auto 11px auto;
 width: 39px;
 }
+
+
+
+.transmitter-info {
+    padding: 13px 30px;
+    border: 1px solid #e1e1e0;
+    display: inline-block;
+    position: relative;
+}
+.transmitter-info img {
+    width: 50px;
+}
+
+
 
 
 
