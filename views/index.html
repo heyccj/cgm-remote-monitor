@@ -688,15 +688,13 @@
         <script src="js/client.js?v=<%= locals.cachebuster %>"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-        setTimeout(function(){
-          
-        $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
-        $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
-        $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
-        wrapPumpStats();
-
-        }, 2000);
-  
+          setTimeout(function(){
+           $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
+            $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
+            $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
+            wrapPumpStats();
+            window.dispatchEvent(new Event('resize'));
+          }, 2000);
         });
 
         function runOnChanged() {
