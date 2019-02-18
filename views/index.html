@@ -736,7 +736,7 @@
 
         function setBatteryIcon() {
           var battery = $('#batt').text();
-          battery = parseFloat(level) * 100;
+          battery = parseFloat(battery) * 100;
           $('#batt').append("<label><\/label>")
           if (battery >= 95) {
           $('#batt label').addClass('icon-battery-100')
