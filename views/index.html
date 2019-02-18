@@ -691,26 +691,26 @@
           
         $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
         $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
-        pumpIcon();
+        $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
+        $('.pill.pump.current label').text('');
         }, 2000);
   
         });
 
         function runOnChanged() {
-          pumpIcon()
+          $('.pill.pump.current label').text('');
         }
 
         function ChangeListener() {
             if($('.pill.pump.current label').text() == "Pump") {
-                runOnChanged() 
+             
+              runOnChanged()
+              
             }
         }
         setInterval(ChangeListener, 500);
 
-        function pumpIcon() {
-          $('.pill.pump.current label').text('');
-          $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">')
-        }
+
 
 </script>
 
