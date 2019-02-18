@@ -687,13 +687,13 @@
         <script src="js/client.js?v=<%= locals.cachebuster %>"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-
-        $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
-        $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current'));
-
         setTimeout(function(){
-          console.log("test");
-          }, 500);
+          
+        $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
+        $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
+        $('.pill.pump.current label').text('');
+        $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">')
+        }, 5000);
   
         });
         </script>
@@ -707,11 +707,14 @@ font-family: 'Open Sans', sans-serif;
     text-shadow: none;
 }
 .bgStatus {
-    width: 100%;
+width: 100%;
+float: none;
 }
 .status {
-    width: 100%;
-    position: relative;
+width: 100%;
+position: relative;
+display: block;
+float: none;
 }
 .bgButton {
 background: none !important;
@@ -730,7 +733,24 @@ right: auto;
 
 
 
-
+.uploader-info {
+position: relative;
+display: inline-block;
+border: 1px solid #e1e1e0;
+padding: 13px 30px;
+}
+.pill.timeago.current, .pill.upbat.current {
+float: none;
+}
+.uploader-info img {
+width: 31px;
+display: block;
+position: relative;
+margin: 0 auto;
+}
+.statusPills {
+font-size: 15px !important;
+}
 .pill {
 border-radius: 0px;
 background: white !important;
@@ -740,6 +760,13 @@ border: none;
 background: none;
 border-radius: 0px;
 color: black;
+}
+
+
+
+.pill.pump.current {
+border: 1px solid #e1e1e0;
+padding: 30px;
 }
 
 
