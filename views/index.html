@@ -689,7 +689,7 @@
         <script type="text/javascript">
         $(document).ready(function() {
           setTimeout(function(){
-           $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
+           $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>').append('<div class="transmitter-info"><img src="https://i.imgur.com/489FHSb.png"></div>');
             $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
             $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
             wrapPumpStats();
@@ -720,6 +720,10 @@
           $(".pill.pump.current em").html(content);
           var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
           $(".pill.pump.current #status").html(content);
+          $('#status label').each(function () {
+             $(this.nextSibling).wrap('<span id="cali"></span>');
+          });
+          $('.transmitter-info').remove("#cali").remove("label").prepend($('#cali')).prepend($('#status label'));
         }
 
 </script>
@@ -742,6 +746,9 @@ width: 100%;
 position: relative;
 display: block;
 float: none;
+}
+.statusBox {
+    width: 100%;
 }
 .bgButton {
 background: none !important;
