@@ -720,10 +720,11 @@
           var content = $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">');
           $(".pill.pump.current em").html(content);
           $('#units').prepend('<i class="fas fa-syringe"></i>');
+          setBatteryIcon();
           $('#batt').prepend('<i class="fas fa-bolt"></i>');
           $('#time').prepend('<i class="fas fa-sync-alt"></i>');
           $('#status').prepend('<i class="fas fa-info-circle"></i>');
-          var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
+          var content = $(".pill.pump.current #status").text().replace(/::::/g,'~100% <label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'~75% <label class=\"icon-battery-75\"><\/label>').replace(/::../g,'~50% <label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'~25% <label class=\"icon-battery-25\"><\/label>');
           $(".pill.pump.current #status").html(content);
           $('#status label').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
@@ -731,6 +732,21 @@
           $('.transmitter-info').find('*').not('img').remove();
           $('.transmitter-info').append("<div><span>Time until next calibration</span></div>").append($('#status label'));
           $('.transmitter-info div').append($("#cali"));
+        }
+
+        function setBatteryIcon() {
+          var battery = $('#batt').text();
+          battery = parseFloat(level) * 100;
+          $('#batt').append("<label><\/label>")
+          if (battery >= 95) {
+          $('#batt label').addClass('icon-battery-100')
+        } else if (battery < 95 && battery >= 55) {
+           $('#batt label').addClass('icon-battery-75')
+        } else if (battery < 55 && battery >= 30) {
+           $('#batt label').addClass('icon-battery-50')
+        } else {
+           $('#batt label').addClass('icon-battery-25')
+        }
         }
 
 </script>
@@ -785,7 +801,7 @@ text-align: left;
 float: none;
 }
 .uploader-info img {
-width: 31px;
+width: 53px;
 display: block;
 position: relative;
 margin: 0 auto 6px auto;
@@ -818,7 +834,7 @@ display: inline-block;
 .pill.pump.current img {
 display: block;
 margin: 0 auto 0 auto;
-width: 39px;
+width: 47px;
 }
 .pill.pump.current label {
     display: none !important;
