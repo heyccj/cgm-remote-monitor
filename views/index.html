@@ -689,7 +689,7 @@
         <script type="text/javascript">
         $(document).ready(function() {
           setTimeout(function(){
-           $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>').append('<div class="transmitter-info"><img src="https://i.imgur.com/489FHSb.png"></div>');
+           $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>').append('<div class="transmitter-info"><img id="transmitter" src="https://i.imgur.com/489FHSb.png"></div>');
             $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://i.imgur.com/1XDlRQJ.jpg">');
             $('.pill.timeago.current').prepend('<i class="fas fa-cloud-upload-alt"></i>');
             $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
@@ -729,9 +729,10 @@
           $('#status span').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
           });
-          $('.transmitter-info').find('*').not('img').remove();
-          $('.transmitter-info').append("<img src='https://static.thenounproject.com/png/210738-200.png'>").append($('#status span'));
-          $('.transmitter-info div').prepend('<i class="fas fa-bolt"></i>').append($("#cali"));
+          $('.transmitter-info').find('*').not('#transmitter').remove();
+          $('.transmitter-info').append('<div id="one"></div><div id="two"></div>')
+          $('.transmitter-info #one').append("<img src='https://static.thenounproject.com/png/210738-200.png'>").append($('#status span'));
+          $('.transmitter-info #two').append('<i class="fas fa-bolt"></i>').append($("#cali"));
         }
 
         function setBatteryIcon() {
