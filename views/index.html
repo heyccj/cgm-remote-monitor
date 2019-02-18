@@ -718,14 +718,18 @@
         function wrapPumpStats() {
           var content = $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">');
           $(".pill.pump.current em").html(content);
+          $('#units').prepend('<i class="fas fa-syringe"></i>');
+          $('#batt').prepend('<i class="fas fa-bolt"></i>');
+          $('#time').prepend('<i class="fas fa-sync-alt"></i>');
+          $('#status').prepend('i class="far fa-question-circle"></i>');
           var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
           $(".pill.pump.current #status").html(content);
           $('#status label').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
           });
           $('.transmitter-info').find('*').not('img').remove();
-          var cali = ('#cali');
-          $('.transmitter-info').prepend("<div>Time until next calibration" + cali + "</div>").prepend($('#status label'));
+          var cali = $('#cali');
+          $('.transmitter-info').append("<div><span>Time until next calibration</span> " + cali + "</div>").append($('#status label'));
         }
 
 </script>
