@@ -30,7 +30,8 @@
       <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui.min.css" media="none" onload="if(media!='all')media='all'">
       <link rel="stylesheet" type="text/css" href="css/jquery.tooltips.css" media="none" onload="if(media!='all')media='all'">
 	    <link rel="stylesheet" type="text/css" href="css/main.css?v=<%= locals.cachebuster %>" media="none" onload="if(media!='all')media='all'" />
-	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="   crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="   crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 <style media="screen" type="text/css">
 
 #centerMessagePanel
@@ -130,6 +131,7 @@
                 <a href="#"  aria-label="cancel" ><span></span><i class="icon-cancel-circled"></i></a>
             </div>
             <div class="primary" >
+                <div id="currentTime">---</div>
                 <div class="bgStatus current">
                     <div class="bgButton" aria-live="assertive" role="contentinfo" aria-label="Blood Sugar">  
                         <span class="pill rawbg hidden"><em></em><label></label></span>
@@ -143,7 +145,6 @@
 
                 <div class="status">
                     <div class="statusBox">
-                        <div id="currentTime">---</div>
                         <div class="statusPills">
                         </div>
                     </div>
@@ -693,7 +694,10 @@
         });
         </script>
 <style  media="screen" type="text/css">
-
+body {
+font-family: 'Quicksand', sans-serif;
+color: #bdbdbd;
+}
 #toolbar {
     background: url(/images/logo2.png) no-repeat 3px 3px #fff;
     border-bottom: none;
@@ -705,6 +709,11 @@
 .status {
     width: 100%;
     position: relative;
+}
+.bgButton {
+background: none !important;
+border: none !important;
+box-shadow: none !important;
 }
 .focus-range {
 position: relative;
