@@ -716,12 +716,10 @@
         }
 
         function wrapPumpStats() {
-           var string = $('.pill.pump.current em').text();
-           $(string).html(text.replace(/units/g, '<span id="#units">'));
-           $(string).html(text.replace(/batt/g, '<span id="#batt">'));
-           $(string).html(text.replace(/status/g, '<span id="#status">'));
-           $(string).html(text.replace(/time/g, '<span id="#time">'));
-           $(string).html(text.replace(/endunits/g, '</span>')).html(text.replace(/endbatt/g, '</span>')).html(text.replace(/endstatus/g, '</span>')).html(text.replace(/endtime/g, '</span>')); 
+          var content = $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="#units">').replace(/batt/g,'<span id="#batt">').replace(/status/g,'<span id="#status">').replace(/time/g,'<span id="#time">');
+          $(".pill.pump.current em").html(content);
+          var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
+          $(".pill.pump.current em").html(content);
         }
 
 </script>
