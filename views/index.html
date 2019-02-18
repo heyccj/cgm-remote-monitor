@@ -700,6 +700,7 @@
         function runOnChanged() {
           $('.pill.pump.current label').text('');
           chartHeight();
+          wrapPumpStats();
         }
 
         function ChangeListener() {
@@ -714,6 +715,16 @@
           $('.row-fluid.section1').height(x);
         }
 
+        function wrapPumpStats() {
+          $('.pill.pump.current em').each(function() {
+           var text = $(this).text();
+           $(this).html(text.replace('units', '<span id="#units">'));
+           $(this).html(text.replace('batt', '<span id="#batt">'));
+           $(this).html(text.replace('status', '<span id="#status">'));
+           $(this).html(text.replace('time', '<span id="#time">'));
+           $(this).html(text.replace('endunits', '</span>')).html(text.replace('endbatt', '</span>')).html(text.replace('endstatus', '</span>')).html(text.replace('endtime', '</span>')); 
+          });
+        }
 
 </script>
 
