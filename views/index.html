@@ -688,6 +688,9 @@
         <script type="text/javascript">
         $(document).ready(function() {
 
+        $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>');
+        $('.uploader-info').prepend($(.pill.upbat.current)).prepend($(.pill.timeago.current));
+
         setTimeout(function(){
           console.log("test");
           }, 500);
@@ -715,6 +718,8 @@ background: none !important;
 border: none !important;
 box-shadow: none !important;
 font-family: 'Oswald', sans-serif;
+color: black !important;
+font-weight: bold;
 }
 .focus-range {
 position: relative;
@@ -723,6 +728,19 @@ top: 0;
 right: auto;
 }
 
+
+
+
+.pill {
+border-radius: 0px;
+background: white !important;
+border: none;
+}
+.pill em {
+background: none;
+border-radius: 0px;
+color: black;
+}
 
 
 
