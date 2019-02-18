@@ -724,19 +724,19 @@
           $('#batt').prepend('<i class="fas fa-bolt"></i>');
           $('#time').prepend('<i class="fas fa-sync-alt"></i>');
           $('#status').prepend('<i class="fas fa-info-circle"></i>');
-          var content = $(".pill.pump.current #status").text().replace(/::::/g,'~100% <label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'~75% <label class=\"icon-battery-75\"><\/label>').replace(/::../g,'~50% <label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'~25% <label class=\"icon-battery-25\"><\/label>');
+          var content = $(".pill.pump.current #status").text().replace(/::::/g,'<span>~100% <label class=\"icon-battery-100\"><\/label><\/span>').replace(/:::./g,'<span>~75% <label class=\"icon-battery-75\"><\/label><\/span>').replace(/::../g,'<span>~50% <label class=\"icon-battery-50\"><\/label><\/span>').replace(/:.../g,'<span>~25% <label class=\"icon-battery-25\"><\/label><\/span>');
           $(".pill.pump.current #status").html(content);
-          $('#status label').each(function () {
+          $('#status span').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
           });
           $('.transmitter-info').find('*').not('img').remove();
-          $('.transmitter-info').append("<div><span>Time until next calibration</span></div>").append($('#status label'));
+          $('.transmitter-info').append("<div><span>Time until next calibration</span></div>").append($('#status span'));
           $('.transmitter-info div').append($("#cali"));
         }
 
         function setBatteryIcon() {
           var battery = $('#batt').text();
-          battery = parseFloat(battery) * 100;
+          battery = parseFloat(battery);
           $('#batt').append("<label><\/label>")
           if (battery >= 95) {
           $('#batt label').addClass('icon-battery-100')
