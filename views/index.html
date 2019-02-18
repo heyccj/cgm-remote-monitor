@@ -723,7 +723,9 @@
           $('#status label').each(function () {
              $(this.nextSibling).wrap('<span id="cali"></span>');
           });
-          $('.transmitter-info').remove("#cali").remove("label").prepend($('#cali')).prepend($('#status label'));
+          $('.transmitter-info').find('*').not('img').remove();
+          var cali = ('#cali');
+          $('.transmitter-info').prepend("<div>Time until next calibration" + cali + "</div>").prepend($('#status label'));
         }
 
 </script>
