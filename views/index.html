@@ -690,7 +690,8 @@
         $(document).ready(function() {
           setTimeout(function(){
            $('.status .statusBox .statusPills').prepend('<div class="uploader-info"></div>').append('<div class="transmitter-info"><img src="https://i.imgur.com/489FHSb.png"></div>');
-            $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://image.flaticon.com/icons/svg/12/12313.svg">');
+            $('.uploader-info').prepend($('.pill.upbat.current')).prepend($('.pill.timeago.current')).prepend('<img src="https://i.imgur.com/1XDlRQJ.jpg">');
+            $('.pill.timeago.current').prepend('<i class="fas fa-cloud-upload-alt"></i>');
             $('.pill.pump.current').prepend('<img src=" https://i.imgur.com/601gCAq.png">');
             wrapPumpStats();
             window.dispatchEvent(new Event('resize'));
@@ -721,7 +722,7 @@
           $('#units').prepend('<i class="fas fa-syringe"></i>');
           $('#batt').prepend('<i class="fas fa-bolt"></i>');
           $('#time').prepend('<i class="fas fa-sync-alt"></i>');
-          $('#status').prepend('<i class="far fa-question-circle"></i>');
+          $('#status').prepend('<i class="fas fa-info-circle"></i>');
           var content = $(".pill.pump.current #status").text().replace(/::::/g,'<label class=\"icon-battery-100\"><\/label>').replace(/:::./g,'<label class=\"icon-battery-75\"><\/label>').replace(/::../g,'<label class=\"icon-battery-50\"><\/label>').replace(/:.../g,'<label class=\"icon-battery-25\"><\/label>');
           $(".pill.pump.current #status").html(content);
           $('#status label').each(function () {
@@ -778,6 +779,7 @@ position: relative;
 display: inline-block;
 border: 1px solid #e1e1e0;
 padding: 13px 30px;
+text-align: left;
 }
 .pill.timeago.current, .pill.upbat.current {
 float: none;
@@ -787,6 +789,9 @@ width: 31px;
 display: block;
 position: relative;
 margin: 0 auto 6px auto;
+}
+.uploader-info .pill {
+    display: block;
 }
 .statusPills {
 font-size: 15px !important;
@@ -806,16 +811,29 @@ color: black;
 
 .pill.pump.current {
 border: 1px solid #e1e1e0;
-padding: 13px 30px;
+padding: 31px 30px 0px 30px;
 position: relative;
 display: inline-block;
 }
 .pill.pump.current img {
 display: block;
-margin: 0 auto 11px auto;
+margin: 0 auto 0 auto;
 width: 39px;
 }
-
+.pill.pump.current label {
+    display: none !important;
+}
+.pill.pump.current em {
+    margin-top: 0 !important;
+    text-align: left;
+}
+.pill.pump.current em span {
+    display: block;
+    margin-bottom: 8px;
+}
+.pill.pump.current i {
+    width: 33px;
+}
 
 
 .transmitter-info {
