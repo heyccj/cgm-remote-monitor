@@ -156,6 +156,8 @@
 
               <div class="client">
 
+                <div class="jumbotron">
+
                 <div class="time"><div id="dynamic"></div></div>
 
                 <div class="bg">
@@ -168,6 +170,8 @@
                       <div class="iob"><div id="dynamic"></div></div>
                       <div class="cob"><div id="dynamic"></div></div>
                   </div>
+                </div>
+
                 </div>
 
                 <div class="upload">
@@ -875,15 +879,61 @@
 
 <style  media="screen" type="text/css">
 
+html, body {
+font-family: 'Open Sans', sans-serif !important;
+}
 
 .primary {
-font-family: 'Open Sans', sans-serif;
+    height: 0;
+    overflow: hidden;
 }
+
 #toolbar {
-    background: url(/images/logo2.png) no-repeat 3px 3px #fff;
+    background: url(/images/logo2.png) no-repeat 3px 3px rgba(0,0,0,0);
     border-bottom: none;
     text-shadow: none;
+    position: absolute;
+    width: 100vw;
 }
+
+.jumbotron {
+    background: #005C97;
+    background: -webkit-linear-gradient(to right, #363795, #005C97);
+    background: linear-gradient(to right, #363795, #005C97);
+    height: 523px;
+    padding: 50px;
+}
+.time {
+    text-align: center;
+    color: white;
+    font-size: 33px;
+}
+
+.main {
+    text-align: center;
+    color: white;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 150px;
+    font-weight: bold;
+    line-height: 100%;
+    margin: 50px 0;
+}
+
+
+.pill {
+    border-radius: 0px;
+    background: none;
+    border: none;
+}
+.pill em {
+background: none;
+border-radius: 0px;
+color: black;
+}
+
+
+
+
 .bgStatus {
 width: 100%;
 float: none;
@@ -936,16 +986,7 @@ margin: 0 auto 6px auto;
 .statusPills {
 font-size: 15px !important;
 }
-.pill {
-border-radius: 0px;
-background: white !important;
-border: none;
-}
-.pill em {
-background: none;
-border-radius: 0px;
-color: black;
-}
+
 
 
 
