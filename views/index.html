@@ -178,7 +178,7 @@
                 <div class="pump">
                  <img src=" https://i.imgur.com/601gCAq.png">
                   <div class="units"><i class="fas fa-syringe"></i><div id="dynamic"></div></div>
-                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
+                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div><label></label></div>
                   <div class="time-ago"><i class="fas fa-sync-alt"></i><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
@@ -779,6 +779,22 @@
           $(".pill.pump.current em #units").clone().appendTo('.client .pump .units #dynamic');
           $(".pill.pump.current em #batt").clone().appendTo('.client .pump .battery #dynamic');
           $(".pill.pump.current em #time").clone().appendTo('.client .pump .time-ago #dynamic');
+
+          //set pump battery icon
+          function setBatteryIcon() {
+              var battery = $('.pump #dynamic #batt').text();
+              battery = parseFloat(battery);
+              if (battery >= 95) {
+              $('.pump .battery label').addClass('icon-battery-100')
+            } else if (battery < 95 && battery >= 55) {
+              $('.pump .battery  label').addClass('icon-battery-75')
+            } else if (battery < 55 && battery >= 30) {
+              $('.pump .battery  label').addClass('icon-battery-50')
+            } else {
+              $('.pump .battery  label').addClass('icon-battery-25')
+            }
+          }
+          setBatteryIcon();
 
           //copy transmitter text to client divs
           $(".pill.pump.current em #status .transmitter-batt").clone().appendTo('.client .sensor .battery #dynamic');
