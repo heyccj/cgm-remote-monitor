@@ -754,6 +754,11 @@
           //copy current blood sugar stats to client divs
           $('.primary .pill.delta').clone().appendTo('.client .bg-stats .delta #dynamic');
           $('.primary .pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
+      
+          //copy COB since it doesnt have a good class...
+          if ($('.minorPills label:contains("COB")').length > 0) {
+            $('.minorPills label').parent().addClass('cob');
+          };
           $('.primary .pill.cob').clone().appendTo('.client .bg-stats .cob #dynamic');
 
           //copy uploader stats to client divs
