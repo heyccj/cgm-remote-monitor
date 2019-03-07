@@ -741,7 +741,9 @@
           $('.pill.pump.current label').text('');
 
           //empty all dynamic fields
-          $( "#dynamic" ).empty();
+          $('#dynamic').each(function () {
+              $(this).empty();
+          });
 
           //copy current time to client div
           $('.primary #currentTime').clone().appendTo('.client .time #dynamic');
