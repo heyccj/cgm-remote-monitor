@@ -727,10 +727,13 @@
           }, 2000);
         });
 
-        function runOnChanged() {
-          $('.pill.pump.current label').text('');
-          runClient();
+        function ChangeListener() {
+            if($('.pill.pump.current label').text() == "Pump") {
+              $('.pill.pump.current label').text('');
+              runClient();
+            }
         }
+        setInterval(ChangeListener, 500);
 
         function runClient() {
 
