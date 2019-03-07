@@ -156,7 +156,7 @@
 
               <div class="client">
 
-                <div class="time"></div>
+                <div class="time"><div id="dynamic"></div></div>
 
                 <div class="bg">
                   <div class="main">
@@ -728,12 +728,12 @@
         });
 
         //every half a second, check to see if the word 'pump' has been updated. If so, data has refreshed so we need to run the scripts.
-      //  function ChangeListener() {
-      //      if($('.pill.pump.current label').text() == "Pump") {
-      //        runClient();
-      //      }
-     //   };
-      //  setInterval(ChangeListener, 500);
+        function ChangeListener() {
+            if($('.pill.pump.current label').text() == "Pump") {
+              runClient();
+            }
+        };
+        setInterval(ChangeListener, 500);
 
         function runClient() {
 
@@ -743,18 +743,21 @@
           //empty all dynamic fields
           $( "#dynamic" ).empty();
 
+          //copy current time to client div
+          $('.primary #currentTime').clone().appendTo('.client .time #dynamic');
+
           //copy current blood sugar information to client divs
-          $('.cururentBG').clone().appendTo('.client .bg .current-bg #dynamic');
-          $('.pill.direction').clone().appendTo('.client .bg .bg-arrow #dynamic');
+          $('.primary .bgStatus .currentBG').clone().appendTo('.client .bg .current-bg #dynamic');
+          $('.primary .pill.direction').clone().appendTo('.client .bg .bg-arrow #dynamic');
           
           //copy current blood sugar stats to client divs
-          $('.pill.delta').clone().appendTo('.client .bg-stats .delta #dynamic');
-          $('.pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
-          $('.pill.cob').clone().appendTo('.client .bg-stats .cob #dynamic');
+          $('.primary .pill.delta').clone().appendTo('.client .bg-stats .delta #dynamic');
+          $('.primary .pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
+          $('.primary .pill.cob').clone().appendTo('.client .bg-stats .cob #dynamic');
 
           //copy uploader stats to client divs
-          $('.pill.timeago.current').clone().appendTo('.client .upload .time-ago #dynamic');
-          $('.pill.upbat.current').clone().appendTo('.client .upload .battery #dynamic');
+          $('.primary .pill.timeago.current').clone().appendTo('.client .upload .time-ago #dynamic');
+          $('.primary .pill.upbat.current').clone().appendTo('.client .upload .battery #dynamic');
 
         }
 
