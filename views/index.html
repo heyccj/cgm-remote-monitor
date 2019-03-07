@@ -158,25 +158,33 @@
 
                 <div class="time"></div>
 
-                <div class="current-bg"></div>
-                <div class="bg-stats">
-                  <div class="delta"></div>
-                  <div class="iob"></div>
-                  <div class="cob"></div>
+                <div class="bg">
+                  <div class="main">
+                    <div class="current-bg"><div id="dynamic"></div></div>
+                    <div class="bg-arrow"><div id="dynamic"></div></div>
+                  </div>
+                  <div class="bg-stats">
+                      <div class="delta"><div id="dynamic"></div></div>
+                      <div class="iob"><div id="dynamic"></div></div>
+                      <div class="cob"><div id="dynamic"></div></div>
+                  </div>
                 </div>
 
                 <div class="upload">
-                    <div class="battery"></div>
-                    <div class="time-ago"></div>
+                    <img src="https://i.imgur.com/1XDlRQJ.jpg">
+                    <div class="battery"><div id="dynamic"></div></div>
+                    <div class="time-ago"><div id="dynamic"></div></div>
                 </div>
                 <div class="pump">
-                  <div class="units"></div>
-                  <div class="battery"></div>
-                  <div class="time-ago"></div>
+                 <img src=" https://i.imgur.com/601gCAq.png">
+                  <div class="units"><div id="dynamic"></div></div>
+                  <div class="battery"><div id="dynamic"></div></div>
+                  <div class="time-ago"><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
-                    <div class="battery"></div>
-                    <div class="calibration"></div>
+                    <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
+                    <div class="battery"><div id="dynamic"></div></div>
+                    <div class="calibration"><div id="dynamic"></div></div>
                 </div>
 
               </div>
@@ -706,15 +714,46 @@
           </div>
   
   
-          <div class="audio alarms">
-              <audio src="audio/alarm.mp3" preload="auto" loop="true" class="alarm mp3" type="audio/mp3"></audio>
-              <audio src="audio/alarm2.mp3" preload="auto" loop="true" class="urgent alarm2 mp3" type="audio/mp3"></audio>
-          </div>
 
         <script src="js/bundle.js?v=<%= locals.cachebuster %>"></script>
         <script src="socket.io/socket.io.js?v=<%= locals.cachebuster %>"></script>
         <script src="js/client.js?v=<%= locals.cachebuster %>"></script>
         <script type="text/javascript">
+
+        $(document).ready(function() {
+          setTimeout(function(){
+            window.dispatchEvent(new Event('resize'));
+            runClient();
+          }, 2000);
+        });
+
+        function runOnChanged() {
+          $('.pill.pump.current label').text('');
+          runClient();
+        }
+
+        function runClient() {
+
+          //empty all dynamic fields
+          $( "#dynamic" ).empty();
+
+          //copy current blood sugar information to client divs
+          $('.cururentBG').clone().appendTo('.client .bg .current-bg #dynamic');
+          $('.pill.direction').clone().appendTo('.client .bg .bg-arrow #dynamic');
+          
+          //copy current blood sugar stats to client divs
+          $('.pill.delta').clone().appendTo('.client .bg-stats .delta #dynamic');
+          $('.pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
+          $('.pill.cob').clone().appendTo('.client .bg-stats .cob #dynamic');
+
+          //copy uploader stats to client divs
+          $('.pill.timeago.current').clone().appendTo('.client .upload .time-ago #dynamic');
+          $('.pill.upbat.current').clone().appendTo('.client .upload .battery #dynamic');
+
+
+
+        }
+
 
         /* 
 
