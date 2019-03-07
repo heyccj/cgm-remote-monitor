@@ -172,18 +172,18 @@
 
                 <div class="upload">
                     <img src="https://i.imgur.com/1XDlRQJ.jpg">
-                    <div class="battery"><div id="dynamic"></div></div>
-                    <div class="time-ago"><div id="dynamic"></div></div>
+                    <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
+                    <div class="time-ago"><i class="fas fa-sync-alt"></i><div id="dynamic"></div></div>
                 </div>
                 <div class="pump">
                  <img src=" https://i.imgur.com/601gCAq.png">
-                  <div class="units"><div id="dynamic"></div></div>
-                  <div class="battery"><div id="dynamic"></div></div>
-                  <div class="time-ago"><div id="dynamic"></div></div>
+                  <div class="units"><i class="fas fa-syringe"></i><div id="dynamic"></div></div>
+                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
+                  <div class="time-ago"><i class="fas fa-sync-alt"></i><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
                     <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
-                    <div class="battery"><div id="dynamic"></div></div>
+                    <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
                     <div class="calibration"><div id="dynamic"></div></div>
                 </div>
 
@@ -759,6 +759,15 @@
           //copy uploader stats to client divs
           $('.primary .pill.timeago.current').clone().appendTo('.client .upload .time-ago #dynamic');
           $('.primary .pill.upbat.current').clone().appendTo('.client .upload .battery #dynamic');
+
+          //fix the dynamic pump text
+          $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">');
+
+          //copy pump text to client divs
+          $(".pill.pump.current em #units").clone().appendTo('.client .pump .units #dynamic');
+          $(".pill.pump.current em #batt").clone().appendTo('.client .pump .battery #dynamic');
+          $(".pill.pump.current em #time").clone().appendTo('.client .pump .time-ago #dynamic');
+
 
         }
 
