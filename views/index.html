@@ -184,7 +184,7 @@
                 <div class="sensor">
                     <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
                     <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
-                    <div class="calibration"><div id="dynamic"></div></div>
+                    <div class="calibration"><img src='https://static.thenounproject.com/png/210738-200.png'><div id="dynamic"></div></div>
                 </div>
 
               </div>
@@ -761,12 +761,23 @@
           $('.primary .pill.upbat.current').clone().appendTo('.client .upload .battery #dynamic');
 
           //fix the dynamic pump text
-          $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">');
+          var content = $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">').replace(/::::/g,'<span>100% <label class=\"icon-battery-100\"><\/label><\/span>').replace(/:::./g,'<span>75% <label class=\"icon-battery-75\"><\/label><\/span>').replace(/::../g,'<span>50% <label class=\"icon-battery-50\"><\/label><\/span>').replace(/:.../g,'<span>25% <label class=\"icon-battery-25\"><\/label><\/span>');
+          $(".pill.pump.current em").html(content);
+          
+          //split out transmitter infor from punmp text above
+          $('#status span').each(function () {
+            $(this).addClass('transmitter-batt');
+             $(this.nextSibling).wrap('<span id="cali"></span>');
+          });
 
           //copy pump text to client divs
           $(".pill.pump.current em #units").clone().appendTo('.client .pump .units #dynamic');
           $(".pill.pump.current em #batt").clone().appendTo('.client .pump .battery #dynamic');
           $(".pill.pump.current em #time").clone().appendTo('.client .pump .time-ago #dynamic');
+
+          //copy transmitter text to client divs
+          $(".pill.pump.current em #status .transmitter-batt").clone().appendTo('.client .sensor .battery #dynamic');
+          $(".pill.pump.current em #status #cali").clone().appendTo('.client .sensor .calibration #dynamic');
 
 
         }
