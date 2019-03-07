@@ -722,8 +722,8 @@
 
         $(document).ready(function() {
           setTimeout(function(){
-           // window.dispatchEvent(new Event('resize'));
             runClient();
+            setInterval(ChangeListener, 500);
           }, 2000);
         });
 
@@ -733,7 +733,6 @@
               runClient();
             }
         };
-        setInterval(ChangeListener, 500);
 
         function runClient() {
 
@@ -741,7 +740,7 @@
           $('.pill.pump.current label').text('');
 
           //empty all dynamic fields
-          $('#dynamic').each(function () {
+          $('html #dynamic').each(function () {
               $(this).empty();
           });
 
