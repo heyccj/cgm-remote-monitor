@@ -776,7 +776,7 @@
           var content = $(".pill.pump.current em").text().replace(/endunits/g,'<\/span>').replace(/endtime/g,'<\/span>').replace(/endbatt/g,'<\/span>').replace(/endstatus/g,'<\/span>').replace(/units/g,'<span id="units">').replace(/batt/g,'<span id="batt">').replace(/status/g,'<span id="status">').replace(/time/g,'<span id="time">').replace(/::::/g,'<span>100% <label class=\"icon-battery-100\"><\/label><\/span>').replace(/:::./g,'<span>75% <label class=\"icon-battery-75\"><\/label><\/span>').replace(/::../g,'<span>50% <label class=\"icon-battery-50\"><\/label><\/span>').replace(/:.../g,'<span>25% <label class=\"icon-battery-25\"><\/label><\/span>');
           $(".pill.pump.current em").html(content);
           
-          //split out transmitter infor from punmp text above
+          //split out transmitter info from punmp text above
           $('#status span').each(function () {
             $(this).addClass('transmitter-batt');
              $(this.nextSibling).wrap('<span id="cali"></span>');
@@ -1013,6 +1013,7 @@ margin: 20px;
 padding: 10px;
 box-shadow: 0px 10px 19px -9px #d2d2d2;
 position: relative;
+background: white;
 }
 .upload::before, .pump::before, .sensor::before {
 background: linear-gradient(to right, #363795, #005C97);
@@ -1059,11 +1060,11 @@ margin-top: -4px;
 }
 .upload em, .pump em, .sensor em {
 color: black;
-font-size: 20px;
+font-size: 15px;
 }
 #units, #time, #batt, .transmitter-batt {
 color: black;
-font-size: 20px;
+font-size: 15px;
 font-weight: bold;
 }
 .upload label, .pump label, .sensor label {
@@ -1081,7 +1082,7 @@ position: absolute;
 #cali {
 font-weight: bold;
 color: black;
-font-size: 20px;
+font-size: 15px;
 }
 
 
@@ -1114,6 +1115,11 @@ margin: 0 auto;
 @media only screen and (min-width: 700px) {
 
 .client {
+overflow: hidden;
+}
+.jumbotron + .container {
+width: 700px;
+margin: 0 auto;
 overflow: hidden;
 }
 .upload, .pump, .sensor {
