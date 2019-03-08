@@ -166,8 +166,8 @@
                     <div class="bg-arrow"><div id="dynamic"></div></div>
                   </div>
                   <div class="bg-stats">
-                      <div class="iob"><i class="fas fa-syringe"></i><div id="dynamic"></div> on board</div>
-                      <div class="cob"><svg class="bread" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bread-loaf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-bread-loaf fa-w-20 fa-5x"><path fill="currentColor" d="M480 192c0-88.37-107.45-160-240-160S0 103.63 0 192c0 35.35 26.86 64 60 64h4v192a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64zM400 32c-2.43 0-4.78.2-7.19.24C465.2 66.39 512 124.62 512 192c0 42.75-26.92 79.06-64 91.46V448a63.27 63.27 0 0 1-8.9 32H544a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64 0-88.37-107.45-160-240-160z" class=""></path></svg><div id="dynamic"></div> carbs on board</div>
+                      <div class="iob"><i class="fas fa-syringe"></i><div id="dynamic"></div>Units on board</div>
+                      <div class="cob"><svg class="bread" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bread-loaf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-bread-loaf fa-w-20 fa-5x"><path fill="currentColor" d="M480 192c0-88.37-107.45-160-240-160S0 103.63 0 192c0 35.35 26.86 64 60 64h4v192a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64zM400 32c-2.43 0-4.78.2-7.19.24C465.2 66.39 512 124.62 512 192c0 42.75-26.92 79.06-64 91.46V448a63.27 63.27 0 0 1-8.9 32H544a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64 0-88.37-107.45-160-240-160z" class=""></path></svg><div id="dynamic"></div> Carbs on board</div>
                   </div>
                 </div>
 
@@ -185,7 +185,7 @@
                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div><label></label></div>
                  <div class="time-ago"><i class="fas fa-sync-alt"></i>Refreshed <div id="dynamic"></div></div>
                   <div class="units"><i class="fas fa-syringe"></i><label>Units left </label><div id="dynamic"></div></div>
-                  <div class="cage"><i class="fas fa-star-of-life"></i><label>Cannula Age</label><div id="dynamic"></div></div>
+                  <div class="cage"><i class="fas fa-star-of-life"></i><label>Cannula Age </label><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
                     <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
@@ -1049,6 +1049,12 @@ margin: 17px auto 0 auto;
 .battery, .time-ago, .units, .calibration {
 margin: 18px 0;
 position: relative;
+font-size: 12px;
+font-weight: 100;
+color: black;
+}
+.time-ago label {
+    font-weight: bold;
 }
 .upload .fas, .pump .fas, .sensor .fas, .calibration .far {
 display: inline-block;
@@ -1072,7 +1078,7 @@ font-weight: bold;
 .upload label, .pump label, .sensor label {
 color: black;
 font-weight: 100;
-font-size: 14px;
+font-size: 12px;
 }
 
 
@@ -1130,7 +1136,7 @@ width: 25%;
 float: left;
 margin-left: 1%;
 margin-right: 1%;
-height: 271px;
+height: 308px;
 padding-left: 26px;
 }
 .upload {
@@ -1140,7 +1146,7 @@ margin-left: 16px;
 margin: 17px auto 29px auto;
 }
 .pump img {
-margin: 39px auto 43px auto;
+  margin: 39px auto 43px 27px;
 }
 img#transmitter {
 margin: 27px auto 25px auto;
