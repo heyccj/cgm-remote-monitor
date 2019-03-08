@@ -908,6 +908,7 @@ font-family: 'Open Sans', sans-serif !important;
     background: #005C97;
     background: -webkit-linear-gradient(to right, #363795, #005C97);
     background: linear-gradient(to right, #363795, #005C97);
+    background: url('https://support.scdn.co/static/img/fw/search-desktop.png');
     height: 452px;
     padding: 50px;
 }
@@ -917,9 +918,17 @@ font-family: 'Open Sans', sans-serif !important;
 .time {
 text-align: center;
 color: white;
-font-size: 19px;
-font-weight: lighter;
-letter-spacing: 2px;
+font-size: 16px;
+font-weight: 800;
+font-family: 'Oswald', sans-serif !important;
+border: 2px solid white;
+display: inline-block;
+padding: 10px;
+position: absolute;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+line-height: 50px;
 }
 
 
@@ -1020,9 +1029,9 @@ padding: 10px;
 box-shadow: 0px 10px 19px -9px #d2d2d2;
 position: relative;
 background: white;
+border-top: none;
 }
 .upload::before, .pump::before, .sensor::before {
-background: linear-gradient(to right, #363795, #005C97);
 height: 13px;
 width: calc(100% + 2px);
 content: "";
@@ -1030,7 +1039,21 @@ position: absolute;
 top: 0px;
 left: -1px;
 }
-
+.upload::before{
+  background: #ADD100;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #7B920A, #ADD100);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #7B920A, #ADD100); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.pump::before {
+  background: #c21500;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.sensor::before {
+  background: #7b4397;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .upload img {
 width: 119px;
 display: block;
@@ -1135,10 +1158,18 @@ margin: 0 auto;
 overflow: hidden;
 margin-bottom: 55px;
 }
+.bg {
+  padding-top: 0;
+}
+.jumbotron {
+height: 503px;
+padding-top: 23px;
+}
 .jumbotron + .container {
 width: 700px;
 margin: 0 auto;
 overflow: hidden;
+margin-top: -84px;
 }
 .upload, .pump, .sensor {
 width: 25%;
