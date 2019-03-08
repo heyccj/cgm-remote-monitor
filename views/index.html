@@ -754,9 +754,9 @@
           //copy current blood sugar information to client divs
           $('.primary .bgStatus .currentBG').clone().appendTo('.client .bg .current-bg #dynamic');
           $('.primary .pill.direction').clone().appendTo('.client .bg .bg-arrow #dynamic');
+          $('.primary .pill.delta').clone().appendTo('.client .bg .bg-arrow #dynamic');
           
           //copy current blood sugar stats to client divs
-          $('.primary .pill.delta').clone().appendTo('.client .bg-stats .delta #dynamic');
           $('.primary .pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
       
           //copy COB since it doesnt have a good class...
@@ -903,33 +903,48 @@ font-family: 'Open Sans', sans-serif !important;
     height: 523px;
     padding: 50px;
 }
+#dynamic {
+    display: block;
+}
 .time {
     text-align: center;
     color: white;
     font-size: 33px;
 }
 
-.main {
+
+
+.main .current-bg {
     text-align: center;
     color: white;
     font-family: 'Oswald', sans-serif !important;
     font-size: 150px;
     font-weight: bold;
     line-height: 100%;
-    margin: 50px 0;
-}
-.slant-down {
-  transform: rotate(-30deg);
-}
-.slant-down {
-  transform: rotate(30deg);
+    margin: 49px 0 18px 0;
 }
 
 .pill {
     border-radius: 0px;
     background: none;
     border: none;
+    display: block;
+    white-space: normal;
+    padding: 0;
+    margin: 0;
 }
+.pill.direction {
+    font-size: 40px;
+    color: white;
+    display: block;
+}
+.slant-down {
+  transform: rotate(-45deg);
+}
+.slant-down {
+  transform: rotate(45deg);
+}
+
 .pill em {
 background: none;
 border-radius: 0px;
