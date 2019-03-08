@@ -166,7 +166,7 @@
                     <div class="bg-arrow"><div id="dynamic"></div></div>
                   </div>
                   <div class="bg-stats">
-                      <div class="iob"><i class="fas fa-syringe"></i><div id="dynamic"></div>Units on board</div>
+                      <div class="iob"><i class="fas fa-syringe"></i><div id="dynamic"></div>Insulin on board</div>
                       <div class="cob"><svg class="bread" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bread-loaf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-bread-loaf fa-w-20 fa-5x"><path fill="currentColor" d="M480 192c0-88.37-107.45-160-240-160S0 103.63 0 192c0 35.35 26.86 64 60 64h4v192a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64zM400 32c-2.43 0-4.78.2-7.19.24C465.2 66.39 512 124.62 512 192c0 42.75-26.92 79.06-64 91.46V448a63.27 63.27 0 0 1-8.9 32H544a32 32 0 0 0 32-32V256h4c33.14 0 60-28.65 60-64 0-88.37-107.45-160-240-160z" class=""></path></svg><div id="dynamic"></div> Carbs on board</div>
                   </div>
                 </div>
@@ -990,7 +990,10 @@ font-size: 13px;
 }
 .iob, .cob {
     display: inline-block;
-    margin: 0 9px;
+    margin: 0 23px;
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
 }
 .iob label, .cob label {
     display: none;
@@ -1054,7 +1057,9 @@ font-weight: 100;
 color: black;
 }
 .time-ago label {
-    font-weight: bold;
+    font-weight: bold !important;
+    font-size: 15px;
+    margin-left: 2px;
 }
 .upload .fas, .pump .fas, .sensor .fas, .calibration .far {
 display: inline-block;
@@ -1079,6 +1084,10 @@ font-weight: bold;
 color: black;
 font-weight: 100;
 font-size: 12px;
+}
+
+#time, #units, .cage #dynamic, #cali, .sage #dynamic {
+    margin-left: 5px;
 }
 
 
