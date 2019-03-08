@@ -932,6 +932,13 @@ font-family: 'Open Sans', sans-serif !important;
     padding: 0;
     margin: 0;
 }
+
+.bg-arrow {
+background: rgba(255,255,255,0.3);
+border: 2px solid white;
+padding: 10px;
+text-align: center;
+}
 .pill.direction {
     font-size: 40px;
     color: white;
@@ -944,13 +951,20 @@ font-family: 'Open Sans', sans-serif !important;
   transform: rotate(45deg);
 }
 
-.pill em {
-background: none;
-border-radius: 0px;
-color: black;
+.pill.direction {
+font-size: 30px;
+color: white;
+display: block;
+}
+.pill.delta * {
+color: white !important;
 }
 
-
+.pill em, .pill label{
+background: none;
+border-radius: 0px;
+padding: 0;
+}
 
 
 .bgStatus {
