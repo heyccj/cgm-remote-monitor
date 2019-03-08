@@ -756,12 +756,12 @@
 
           //copy current blood sugar information to client divs
           $('.primary .bgStatus .currentBG').clone().appendTo('.client .bg .current-bg #dynamic');
-          $('.primary .pill.direction').clone().appendTo('.client .bg .bg-arrow #dynamic');
+          $('.primary .pill.direction i').clone().appendTo('.client .bg .bg-arrow #dynamic');
           $('.primary .pill.delta').clone().appendTo('.client .bg .bg-arrow #dynamic');
           
           //copy current blood sugar stats to client divs
           $('.primary .pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
-      
+          
           //copy COB since it doesnt have a good class...
           if ($('.minorPills label:contains("COB")').length > 0) {
             $('.minorPills label').parent().addClass('cob');
