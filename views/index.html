@@ -906,9 +906,11 @@ font-family: 'Open Sans', sans-serif !important;
     display: block;
 }
 .time {
-    text-align: center;
-    color: white;
-    font-size: 33px;
+text-align: center;
+color: white;
+font-size: 19px;
+font-weight: lighter;
+letter-spacing: 2px;
 }
 
 
@@ -971,51 +973,97 @@ font-size: 20px;
 font-weight: 100;
 font-size: 13px;
 }
+
+
+.bg-stats {
+    text-align: center;
+    margin: 20px 0;
+}
+.iob, .cob {
+    display: inline-block;
+    margin: 0 9px;
+}
+.iob .fas.fa-syringe {
+    color: white;
+    font-size: 24px;
+}
 .bread, .bread path {
-width: 30px;
+  width: 25px;
 fill: white;
 }
-
-
-
-
-.bgStatus {
-width: 100%;
-float: none;
+.bg-stats label {
+color: white;
+font-size: 13px;
+font-weight: 100;
 }
-.status {
-width: 100%;
+.bg-stats em {
+color: white;
+font-size: 20px;
+margin-left: 5px;
+}
+
+
+.upload, .pump, .sensor {
+border: 1px solid #e1e1e0;
+margin: 20px;
+padding: 10px;
+box-shadow: 0px 10px 19px -9px #d2d2d2;
 position: relative;
+}
+.upload::before, .pump::before, .sensor::before {
+background: linear-gradient(to right, #363795, #005C97);
+height: 13px;
+width: calc(100% + 2px);
+content: "";
+position: absolute;
+top: 0px;
+left: -1px;
+}
+
+.upload img {
+width: 119px;
 display: block;
-float: none;
+margin: 17px auto 0 auto;
 }
-.statusBox {
-    width: 100%;
+
+.pump img {
+width: 98px;
+display: block;
+margin: 17px auto 0 auto;
 }
-.bgButton {
-background: none !important;
-border: none !important;
-box-shadow: none !important;
-font-family: 'Oswald', sans-serif;
-color: black !important;
+
+.battery, .time-ago, .units, .calibration {
+margin: 18px 0;
+position: relative;
+}
+.upload .fas, .pump .fas, .sensor .fas {
+display: inline-block;
+color: black;
+font-size: 21px;
+position: absolute;
+}
+.upload #dynamic, .pump #dynamic, .sensor #dynamic {
+display: inline-block;
+}
+.upload em, .pump em, .sensor em {
+color: black;
+font-size: 20px;
+}
+#units, #time, #batt, .transmitter-batt {
+color: black;
+font-size: 20px;
 font-weight: bold;
 }
-.focus-range {
-position: relative;
-width: 100%;
-top: 0;
-right: auto;
+.upload label, .pump label, .sensor label {
+color: black;
+font-weight: 100;
+font-size: 14px;
+margin-left: 6px;
 }
 
 
 
-.uploader-info {
-position: relative;
-display: inline-block;
-border: 1px solid #e1e1e0;
-padding: 13px 30px;
-text-align: left;
-}
+
 .pill.timeago.current, .pill.upbat.current {
 float: none;
 }
