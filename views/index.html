@@ -185,11 +185,13 @@
                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div><label></label></div>
                  <div class="time-ago"><i class="fas fa-sync-alt"></i><div id="dynamic"></div></div>
                   <div class="units"><i class="fas fa-syringe"></i><div id="dynamic"></div></div>
+                  <div class="cage"><i class="fas fa-star-of-life"></i><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
                     <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
                     <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
-                    <div class="calibration"><i class="far fa-clock"></i><div id="dynamic"></div></div>
+                   <div class="calibration"><i class="far fa-clock"></i><div id="dynamic"></div></div>
+                   <div class="sage"><i class="fas fa-star-of-life"></i><div id="dynamic"></div></div>
                 </div>
 
               </div>
@@ -763,9 +765,9 @@
           $('.primary .pill.iob').clone().appendTo('.client .bg-stats .iob #dynamic');
           
           //copy COB since it doesnt have a good class...
-          if ($('.minorPills label:contains("COB")').length > 0) {
-            $('.minorPills label').parent().addClass('cob');
-          };
+          $('.minorPills label:contains("COB")').each(function () {
+              $(this).parent().addClass('cob');
+          });
           $('.primary .pill.cob').clone().appendTo('.client .bg-stats .cob #dynamic');
 
           //copy uploader stats to client divs
@@ -786,6 +788,8 @@
           $(".pill.pump.current em #units").clone().appendTo('.client .pump .units #dynamic');
           $(".pill.pump.current em #batt").clone().appendTo('.client .pump .battery #dynamic');
           $(".pill.pump.current em #time").clone().appendTo('.client .pump .time-ago #dynamic');
+          $('.primary .pill.cage').clone().appendTo('.client .pump .cage #dynamic');
+
 
           //set pump battery icon
           function setBatteryIcon() {
@@ -806,6 +810,7 @@
           //copy transmitter text to client divs
           $(".pill.pump.current em #status .transmitter-batt").clone().appendTo('.client .sensor .battery #dynamic');
           $(".pill.pump.current em #status #cali").clone().appendTo('.client .sensor .calibration #dynamic');
+          $('.primary .pill.sage').clone().appendTo('.client .sensor .sage #dynamic');
 
 
         }
@@ -1047,7 +1052,7 @@ margin: 17px auto 0 auto;
 margin: 18px 0;
 position: relative;
 }
-.upload .fas, .pump .fas, .sensor .fas {
+.upload .fas, .pump .fas, .sensor .fas, .calibration .far {
 display: inline-block;
 color: black;
 font-size: 21px;
