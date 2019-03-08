@@ -173,6 +173,8 @@
 
                 </div>
 
+                <div class="container">
+
                 <div class="upload">
                     <img src="https://i.imgur.com/1XDlRQJ.jpg">
                     <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
@@ -189,6 +191,8 @@
                     <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
                     <div class="calibration"><img src='https://static.thenounproject.com/png/210738-200.png'><div id="dynamic"></div></div>
                 </div>
+
+              </div>
 
               </div>
 
@@ -1032,6 +1036,12 @@ display: block;
 margin: 17px auto 0 auto;
 }
 
+img#transmitter {
+width: 104px;
+display: block;
+margin: 17px auto 0 auto;
+}
+
 .battery, .time-ago, .units, .calibration {
 margin: 18px 0;
 position: relative;
@@ -1044,6 +1054,8 @@ position: absolute;
 }
 .upload #dynamic, .pump #dynamic, .sensor #dynamic {
 display: inline-block;
+margin-left: 40px;
+margin-top: -4px;
 }
 .upload em, .pump em, .sensor em {
 color: black;
@@ -1062,6 +1074,15 @@ margin-left: 6px;
 }
 
 
+.calibration img {
+width: 28px;
+position: absolute;
+}
+#cali {
+font-weight: bold;
+color: black;
+font-size: 20px;
+}
 
 
 
@@ -1087,13 +1108,34 @@ width: 100px;
 margin: 0 auto;
 }
 
-@media only screen and (min-width: 400px) {
 
 
+
+@media only screen and (min-width: 700px) {
+
+.client {
+overflow: hidden;
 }
-
-@media only screen and (min-width: 750px) {
-
+.upload, .pump, .sensor {
+width: 25%;
+float: left;
+margin-left: 1%;
+margin-right: 1%;
+height: 271px;
+padding-left: 26px;
+}
+.upload {
+margin-left: 16px;
+}
+.upload img {
+margin: 17px auto 29px auto;
+}
+.pump img {
+margin: 39px auto 43px auto;
+}
+img#transmitter {
+margin: 27px auto 25px auto;
+}
 
 }
 
