@@ -184,14 +184,14 @@
                  <img src=" https://i.imgur.com/601gCAq.png">
                  <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div><label></label></div>
                  <div class="time-ago"><i class="fas fa-sync-alt"></i><div id="dynamic"></div></div>
-                  <div class="units"><i class="fas fa-syringe"></i><div id="dynamic"></div></div>
-                  <div class="cage"><i class="fas fa-star-of-life"></i><div id="dynamic"></div></div>
+                  <div class="units"><i class="fas fa-syringe"></i><em>Reservoir</em><div id="dynamic"></div></div>
+                  <div class="cage"><i class="fas fa-star-of-life"></i><em>Cannula Age</em><div id="dynamic"></div></div>
                 </div>
                 <div class="sensor">
                     <img id="transmitter" src="https://i.imgur.com/489FHSb.png">
                     <div class="battery"><i class="fas fa-bolt"></i><div id="dynamic"></div></div>
-                   <div class="calibration"><i class="far fa-clock"></i><div id="dynamic"></div></div>
-                   <div class="sage"><i class="fas fa-star-of-life"></i><div id="dynamic"></div></div>
+                   <div class="calibration"><i class="far fa-clock"></i><em>Time until Calibration</em><div id="dynamic"></div></div>
+                   <div class="sage"><i class="fas fa-star-of-life"></i><em>Sensor Age</em><div id="dynamic"></div></div>
                 </div>
 
               </div>
@@ -788,7 +788,7 @@
           $(".pill.pump.current em #units").clone().appendTo('.client .pump .units #dynamic');
           $(".pill.pump.current em #batt").clone().appendTo('.client .pump .battery #dynamic');
           $(".pill.pump.current em #time").clone().appendTo('.client .pump .time-ago #dynamic');
-          $('.primary .pill.cage').clone().appendTo('.client .pump .cage #dynamic');
+          $('.primary .pill.cage').clone().appendTo('.client .pump .cage #dynamic').replace(/CAGE/g,'');
 
 
           //set pump battery icon
@@ -810,7 +810,7 @@
           //copy transmitter text to client divs
           $(".pill.pump.current em #status .transmitter-batt").clone().appendTo('.client .sensor .battery #dynamic');
           $(".pill.pump.current em #status #cali").clone().appendTo('.client .sensor .calibration #dynamic');
-          $('.primary .pill.sage').clone().appendTo('.client .sensor .sage #dynamic');
+          $('.primary .pill.sage').clone().appendTo('.client .sensor .sage #dynamic').replace(/SAGE/g,'');
 
 
         }
